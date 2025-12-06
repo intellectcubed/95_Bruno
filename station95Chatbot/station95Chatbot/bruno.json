@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "station95Chatbot",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

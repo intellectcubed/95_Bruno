@@ -1,0 +1,39 @@
+meta {
+  name: simple No Crew
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8081/webhook
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "id": "test-message-123",
+    "name": "{{sender}}",
+    "text": "{{message}}",
+    "sender_type": "user",
+    "sender_id": "12345",
+    "created_at": "{{request_epoch}}",
+    "group_id": "your-group-id-here",
+    "system": false
+  }
+}
+
+vars:pre-request {
+  sender: Kholer
+  message: Squad 42 will not have crew on March 14, 2026 from 0800-1000
+  request_epoch: 123
+}
+
+settings {
+  encodeUrl: false
+  timeout: 0
+}
