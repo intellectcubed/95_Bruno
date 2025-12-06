@@ -1,0 +1,25 @@
+meta {
+  name: get_schedule_day
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:8000/?action=get_schedule_day&date={{schedule_timestamp}}
+  body: none
+  auth: inherit
+}
+
+params:query {
+  action: get_schedule_day
+  date: {{schedule_timestamp}}
+}
+
+vars:pre-request {
+  schedule_timestamp: 20260314
+}
+
+settings {
+  encodeUrl: false
+  timeout: 0
+}

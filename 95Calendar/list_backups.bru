@@ -1,0 +1,21 @@
+meta {
+  name: list_backups
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:8000/?action=list_backups&date={{shift_timestamp}}
+  body: none
+  auth: inherit
+}
+
+params:query {
+  action: list_backups
+  date: {{shift_timestamp}}
+}
+
+settings {
+  encodeUrl: false
+  timeout: 0
+}
